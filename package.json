@@ -29,7 +29,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "immutable": "^3.8.2",
     "lodash": "^4.17.21",
-    "parcel": "^2.14.4",
+    "parcel": "^2.16.4",
     "pegjs": "^0.10.0",
     "react": "16.10.0",
     "react-beautiful-dnd": "^13.0.0",
