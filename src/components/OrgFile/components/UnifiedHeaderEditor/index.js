@@ -221,10 +221,12 @@ class UnifiedHeaderEditor extends PureComponent {
       return;
     }
 
-    // Check for unordered list: "- item" or "  + item"
-    const unorderedMatch = currentLine.match(/^(\s*)([-+]) (.*)$/);
+    // Check for unordered list: "- item" or "  + item",
+    // optionally followed by a checkbox ("[ ]", "[X], "[-]")
+    const unorderedMatch = currentLine.match(/^(\s*)([-+]) (\[[-X ]] )?(.*)$/);
     if (unorderedMatch) {
-      const [, indent, bullet, content] = unorderedMatch;
+      const [, indent, bullet, optionalCheckbox, content] = unorderedMatch;
+      const checkbox = optionalCheckbox ? optionalCheckbox : '';
       event.preventDefault();
       if (content.trim() === '') {
         // Empty item — remove the prefix to exit list mode
@@ -240,9 +242,10 @@ class UnifiedHeaderEditor extends PureComponent {
         const newValue =
           descriptionValue.substring(0, selectionStart) +
           prefix +
+          checkbox +
           descriptionValue.substring(selectionEnd);
         this.setState({ descriptionValue: newValue }, () => {
-          const newCursorPos = selectionStart + prefix.length;
+          const newCursorPos = selectionStart + prefix.length + checkbox.length;
           textarea.selectionStart = newCursorPos;
           textarea.selectionEnd = newCursorPos;
         });
