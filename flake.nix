@@ -48,6 +48,8 @@
               echo
               echo "Note: Be careful to not accidentally commit this change!"
               echo
+              echo "You can now run 'yarn start', 'yarn test', etc."
+              echo
             fi
           '';
         };
