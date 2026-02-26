@@ -202,12 +202,13 @@ class TitleLine extends PureComponent {
 const mapStateToProps = (state, ownProps) => {
   const path = state.org.present.get('path');
   const file = state.org.present.getIn(['files', path]);
+  const selectedHeaderId = !!file ? file.get('selectedHeaderId') : null;
   return {
     setShouldLogIntoDrawer: state.base.get('shouldLogIntoDrawer'),
     shouldTapTodoToAdvance: state.base.get('shouldTapTodoToAdvance'),
     closeSubheadersRecursively: state.base.get('closeSubheadersRecursively'),
-    isSelected: file.get('selectedHeaderId') === ownProps.header.get('id'),
-    todoKeywordSets: file.get('todoKeywordSets'),
+    isSelected: selectedHeaderId === ownProps.header.get('id'),
+    todoKeywordSets: !!file ? file.get('todoKeywordSets') : null,
   };
 };
 

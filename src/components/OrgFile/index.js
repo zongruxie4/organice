@@ -160,7 +160,7 @@ class OrgFile extends PureComponent {
     }
 
     const { path } = this.props;
-    if (!_.isEmpty(path) && path !== prevProps.path) {
+    if (!_.isEmpty(path) && !path.startsWith(STATIC_FILE_PREFIX) && path !== prevProps.path) {
       this.props.syncBackend.downloadFile(path);
       this.props.org.setPath(path);
     }

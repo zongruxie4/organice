@@ -183,7 +183,7 @@ const mapStateToProps = (state) => {
   const agendaStartOnWeekday = state.base.get('agendaStartOnWeekday');
   return {
     files: determineIncludedFiles(allFiles, fileSettings, path, 'includeInAgenda', false),
-    todoKeywordSets: file.get('todoKeywordSets'),
+    todoKeywordSets: !!file ? file.get('todoKeywordSets') : null,
     agendaTimeframe: state.base.get('agendaTimeframe'),
     agendaDefaultDeadlineDelayValue: state.base.get('agendaDefaultDeadlineDelayValue') || 5,
     agendaDefaultDeadlineDelayUnit: state.base.get('agendaDefaultDeadlineDelayUnit') || 'd',
