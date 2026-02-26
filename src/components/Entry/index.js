@@ -168,6 +168,7 @@ class Entry extends PureComponent {
 
         {isAuthenticated &&
           ([
+            'changelog',
             'keyboard_shortcuts_editor',
             'settings',
             'capture_templates_editor',
@@ -178,6 +179,7 @@ class Entry extends PureComponent {
               {activeModalPage === 'keyboard_shortcuts_editor' && <KeyboardShortcutsEditor />}
               {activeModalPage === 'capture_templates_editor' && <CaptureTemplatesEditor />}
               {activeModalPage === 'file_settings_editor' && <FileSettingsEditor />}
+              {activeModalPage === 'changelog' && this.renderChangelogFile()}
               {activeModalPage === 'sample' && this.renderSampleFile()}
             </Fragment>
           ) : (

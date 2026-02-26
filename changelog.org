@@ -12,6 +12,8 @@ When there are updates to the changelog, you will be notified and see a 'gift' i
 *** Help/Sample modal for authenticated users
     - Fixed an issue where clicking the question-mark help icon could show an empty Sample screen or get stuck on =Syncing ...=
     - PR: https://github.com/200ok-ch/organice/pull/1106
+*** Unseen changelog gift icon in authenticated header
+    - Fixed the gift icon so opening changelog updates from the header renders the changelog modal correctly for logged-in users
 ** Added
 *** Auto-continue lists with checkboxes in description editor
     - When pressing Enter in an (unordered) checkbox list, the list
