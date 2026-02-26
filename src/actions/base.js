@@ -43,7 +43,9 @@ export const restoreStaticFile = (staticFile, lastViewedFilePath) => {
       sample: sampleContent,
     }[staticFile];
 
-    dispatch(parseFile(STATIC_FILE_PREFIX + staticFile, fileContents));
+    const staticFilePath = STATIC_FILE_PREFIX + staticFile;
+    dispatch(parseFile(staticFilePath, fileContents));
+    dispatch(setPath(staticFilePath));
   };
 };
 
