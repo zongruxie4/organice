@@ -322,6 +322,20 @@ test.describe('Description List Auto-Continuation', () => {
     expect(value).toBe('- item one\n- ');
   });
 
+  test('should auto-continue unordered list with dash and checkbox on Enter', async ({ page }) => {
+    const textarea = await openDescriptionEditor(page, firefoxHelper);
+
+    // Clear the textarea and type a list item
+    await textarea.fill('');
+    await textarea.click();
+    await textarea.type('- [ ] item one');
+    await textarea.press('Enter');
+
+    // Verify the next line starts with "- "
+    const value = await textarea.inputValue();
+    expect(value).toBe('- [ ] item one\n- [ ] ');
+  });
+
   test('should auto-continue ordered list on Enter', async ({ page }) => {
     const textarea = await openDescriptionEditor(page, firefoxHelper);
 

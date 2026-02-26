@@ -8,12 +8,18 @@ All user visible changes to organice will be documented in this file.
 When there are updates to the changelog, you will be notified and see a 'gift' icon appear on the top right corner.
 
 * [2026-02-26 Thu]
-
 ** Fixed
-
 *** Help/Sample modal for authenticated users
     - Fixed an issue where clicking the question-mark help icon could show an empty Sample screen or get stuck on =Syncing ...=
     - PR: https://github.com/200ok-ch/organice/pull/1106
+** Added
+*** Auto-continue lists with checkboxes in description editor
+    - When pressing Enter in an (unordered) checkbox list, the list
+      will be continued with a checkbox
+    - The new line has a checkbox with the same checked state as the
+      previous one (unchecked, checked, partially checked).
+
+    See [[https://orgmode.org/manual/Checkboxes.html][orgmode manual]] for more information on checkboxes.
 
 * [2026-02-12 Thu]
 
