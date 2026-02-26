@@ -178,6 +178,7 @@ class Entry extends PureComponent {
               {activeModalPage === 'keyboard_shortcuts_editor' && <KeyboardShortcutsEditor />}
               {activeModalPage === 'capture_templates_editor' && <CaptureTemplatesEditor />}
               {activeModalPage === 'file_settings_editor' && <FileSettingsEditor />}
+              {activeModalPage === 'sample' && this.renderSampleFile()}
             </Fragment>
           ) : (
             <Switch>

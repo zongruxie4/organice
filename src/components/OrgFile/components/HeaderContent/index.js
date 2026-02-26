@@ -244,12 +244,14 @@ class HeaderContent extends PureComponent {
 const mapStateToProps = (state, ownProps) => {
   const path = state.org.present.get('path');
   const file = state.org.present.getIn(['files', path]);
+  const selectedHeaderId = !!file ? file.get('selectedHeaderId') : null;
+  const editMode = !!file ? file.get('editMode') : null;
   return {
-    isSelected: file.get('selectedHeaderId') === ownProps.header.get('id'),
+    isSelected: selectedHeaderId === ownProps.header.get('id'),
     dontIndent: state.base.get('shouldNotIndentOnExport'),
-    selectedListItemId: file.get('selectedListItemId'),
-    inListTitleEditMode: file.get('editMode') === 'list-title',
-    inListContentsEditMode: file.get('editMode') === 'list-contents',
+    selectedListItemId: !!file ? file.get('selectedListItemId') : null,
+    inListTitleEditMode: editMode === 'list-title',
+    inListContentsEditMode: editMode === 'list-contents',
   };
 };
 
