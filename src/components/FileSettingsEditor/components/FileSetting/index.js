@@ -72,9 +72,8 @@ export default ({ setting, index, onFieldPathUpdate, onDeleteSetting, loadedFile
 
         <div className="file-setting__help-text">
           By default, when you start organice, it will display your root file directory. If you
-          prefer to display a specific Org file instead, enable this option. <br /> Note: There can
-          only be one default file, of course. If you enable this option for multiple files,
-          organice will pick the first one.
+          prefer to display a specific Org file instead, enable this option. Enabling this option
+          disables it for all other file settings.
         </div>
       </div>
       <div className="file-setting__field-container">

@@ -110,6 +110,35 @@ describe('org reducer', () => {
     'planningItems'
   );
 
+  describe('file settings', () => {
+    it('keeps only one default startup file when enabling a file setting', () => {
+      const state = readInitialState().org.present.set(
+        'fileSettings',
+        fromJS([
+          { id: 'a', path: '/a.org', defaultOnStartup: false },
+          { id: 'b', path: '/b.org', defaultOnStartup: true },
+          { id: 'c', path: '/c.org', defaultOnStartup: true },
+        ])
+      );
+
+      const newState = reducer(
+        state,
+        types.updateFileSettingFieldPathValue('a', ['defaultOnStartup'], true)
+      );
+
+      expect(
+        newState
+          .get('fileSettings')
+          .map((setting) => [setting.get('path'), setting.get('defaultOnStartup')])
+          .toJS()
+      ).toEqual([
+        ['/a.org', true],
+        ['/b.org', false],
+        ['/c.org', false],
+      ]);
+    });
+  });
+
   describe('REFILE_SUBTREE', () => {
     let state;
     const path = 'testfile';

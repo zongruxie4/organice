@@ -1768,6 +1768,16 @@ const indexOfFileSettingWithId = (settings, settingId) =>
 const updateFileSettingFieldPathValue = (state, action) => {
   const settingIndex = indexOfFileSettingWithId(state.get('fileSettings'), action.settingId);
 
+  if (
+    settingIndex !== -1 &&
+    action.newValue === true &&
+    _.isEqual(action.fieldPath, ['defaultOnStartup'])
+  ) {
+    return state.update('fileSettings', (settings) =>
+      settings.map((setting, index) => setting.set('defaultOnStartup', index === settingIndex))
+    );
+  }
+
   return state.setIn(['fileSettings', settingIndex].concat(action.fieldPath), action.newValue);
 };
 
