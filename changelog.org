@@ -7,6 +7,11 @@ All user visible changes to organice will be documented in this file.
 
 When there are updates to the changelog, you will be notified and see a 'gift' icon appear on the top right corner.
 
+* [2026-07-09 Thu]
+** Fixed
+*** Default startup file setting
+    - Selecting a file to open on startup now automatically clears that option from other file settings
+
 * [2026-05-17 Sun]
 ** Fixed
 *** Capture target file sync
