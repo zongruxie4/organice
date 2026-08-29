@@ -39,7 +39,7 @@
     "react-hotkeys": "^2.0.0",
     "react-motion": "^0.5.2",
     "react-redux": "^7.2.1",
-    "react-router-dom": "5.2.0",
+    "react-router-dom": "6.30.2",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "redux-undo": "1.1.0",
