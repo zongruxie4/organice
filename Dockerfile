@@ -47,7 +47,7 @@ RUN bin/transient_env_vars.sh bait >> .env
 RUN yarn build
 
 # Production stage
-FROM node:20.17.0-bookworm-slim AS production
+FROM node:20.19.6-bookworm-slim AS production
 
 RUN npm install -g serve
 
