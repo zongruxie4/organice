@@ -43,7 +43,7 @@
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "redux-undo": "1.1.0",
-    "webdav": "^3.3.0"
+    "webdav": "^5.0.0"
   },
   "scripts": {
     "start": "./bin/compile_search_parser.sh && parcel --host 0.0.0.0 --port 3000",
@@ -82,7 +82,7 @@
     "babel-jest": "^29.7.0",
     "babel-preset-react-app": "^10.0.0",
     "crypto-browserify": "^3.12.0",
-    "eslint": "^7.11.0",
+    "eslint": "^9.0.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-nibble": "^6.1.0",
     "eslint-plugin-jest": "^23.20.0",
@@ -98,7 +98,7 @@
     "path-browserify": "^1.0.0",
     "prettier": "^2.0.5",
     "prettier-eslint": "^11.0.0",
-    "prettier-eslint-cli": "^5.0.1",
+    "prettier-eslint-cli": "^7.0.1",
     "process": "^0.11.10",
     "react-test-renderer": "^17.0.1",
     "stream-browserify": "^3.0.0",
